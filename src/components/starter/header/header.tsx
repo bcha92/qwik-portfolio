@@ -1,8 +1,11 @@
 import { component$ } from "@builder.io/qwik";
+import { Link, useNavigate } from "@builder.io/qwik-city";
 import { QwikLogo } from "../icons/qwik";
 import styles from "./header.module.css";
 
 export default component$(() => {
+  const nav = useNavigate();
+
   return (
     <header class={styles.header}>
       <div class={["container", styles.wrapper]}>
@@ -13,28 +16,15 @@ export default component$(() => {
         </div>
         <ul>
           <li>
-            <a
-              href="https://qwik.builder.io/docs/components/overview/"
-              target="_blank"
-            >
-              Docs
-            </a>
+            <Link href="/" onClick$={() => nav("/")}>
+              About
+            </Link>
           </li>
           <li>
-            <a
-              href="https://qwik.builder.io/examples/introduction/hello-world/"
-              target="_blank"
-            >
-              Examples
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://qwik.builder.io/tutorial/welcome/overview/"
-              target="_blank"
-            >
-              Tutorials
-            </a>
+            <Link href="/featured" onClick$={() => nav("/featured")}>
+              {/* TODO: set href and onClick$ to #featured for desktop and header html id to "featured" */}
+              Featured
+            </Link>
           </li>
         </ul>
       </div>
