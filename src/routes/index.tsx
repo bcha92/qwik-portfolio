@@ -2,6 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import About from "~/components/router-head/about";
+import Featured from "~/components/router-head/featured";
+
 import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
@@ -11,6 +13,7 @@ export default component$(() => {
   return (
     <>
       <About />
+      <Featured isHidden={false} />
       <Hero />
       <Starter />
 
