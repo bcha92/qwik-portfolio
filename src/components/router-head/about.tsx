@@ -2,6 +2,7 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import Image from "~/media/profile.png?jsx";
 
 export default component$(() => {
+  // 31557600000 milliseconds in one year
   const expCalc: number =
     (new Date().getTime() - new Date("2022-01-04").getTime()) / 31557600000;
 
@@ -15,11 +16,11 @@ export default component$(() => {
 
   return (
     <div class="about container flex flex-col items-center justify-center">
-      <h2 id="about">About Me</h2>
+      <h2 id="about">😊 About Me</h2>
       <Image class="m-4 rounded-full" />
       <p>
         👋 My name is Brandon Cha, and I am a full-stack software engineer 👨‍💻
-        with {expCalc.toFixed(2)} years of experience in professional
+        with {expCalc.toFixed(1)} years of experience in professional
         development, starting in entertainment and media with prior experience
         in dentistry and healthcare.
       </p>
