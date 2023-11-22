@@ -1,7 +1,9 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import type { HiddenProp } from "../PropsList";
+import type { HiddenProp, ExternalInfoProps } from "../SchemaList";
+import ExternalButton from "../button/external-button";
+
 import Image from "~/media/profile.png?jsx";
-import ExternalInfo from "../ExternalInfo.json";
+import ExternalInfo from "../../assets/ExternalInfo.json";
 
 export default component$<HiddenProp>(({ isHidden }) => {
   const expCalc: number =
@@ -11,7 +13,20 @@ export default component$<HiddenProp>(({ isHidden }) => {
     .about > p {
       margin: 0.5em 0;
       text-align: center;
-      max-width: 32vw;
+    }
+
+    ul {
+      margin-top: 1em;
+    }
+    
+    @media screen and (min-width: 768px) {
+      ul {
+        width: 60%;
+      }
+      
+      .about > p {
+        max-width: 32vw;
+      }
     }
   `);
 
@@ -21,8 +36,8 @@ export default component$<HiddenProp>(({ isHidden }) => {
         isHidden ? "hidden" : ""
       } flex flex-col items-center justify-center`}
     >
-      <h2 id="about">About Me</h2>
-      <Image class="m-4 rounded-full" />
+      <h2 id="about">⭐About Me</h2>
+      <Image class="w-9/10 m-4 rounded-full" />
 
       <p>
         👋 My name is Brandon Cha, and I am a full-stack software engineer 👨‍💻
@@ -38,23 +53,27 @@ export default component$<HiddenProp>(({ isHidden }) => {
         While you're here, checkout my links and my favorite projects below 👇!
       </p>
 
-      <ul>
-        {ExternalInfo.map((info) => {
-          return (
-            <li key={info.id}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 512 512"
-              >
-                <path d={info.path} />
-              </svg>
-              <p>
-                {info.name}: {info.link}
-              </p>
-            </li>
-          );
-        })}
+      <ul class="flex flex-wrap items-center justify-evenly">
+        {ExternalInfo.map((info: ExternalInfoProps) =>
+          info.path ? (
+            <ExternalButton
+              key={info.id}
+              href={info.link || "#"}
+              svg={{ path: info.path }}
+              text={info.name}
+              color={info.color}
+              background={info.background}
+            />
+          ) : (
+            <ExternalButton
+              key={info.id}
+              href={info.link || "#"}
+              text={info.name}
+              color={info.color}
+              background={info.background}
+            />
+          ),
+        )}
       </ul>
     </div>
   );
