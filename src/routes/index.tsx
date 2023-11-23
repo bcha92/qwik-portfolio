@@ -1,6 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
+import About from "~/components/router-head/about";
+import Featured from "~/components/router-head/featured";
+
 import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
@@ -9,13 +12,15 @@ import Starter from "~/components/starter/next-steps/next-steps";
 export default component$(() => {
   return (
     <>
+      <About />
+      <Featured isHidden={false} />
       <Hero />
       <Starter />
 
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
 
-      <div class="container container-center container-spacing-xl">
+      <div class="container-center container-spacing-xl container">
         <h3>
           You can <span class="highlight">count</span>
           <br /> on me
@@ -23,7 +28,7 @@ export default component$(() => {
         <Counter />
       </div>
 
-      <div class="container container-flex">
+      <div class="container-flex container">
         <Infobox>
           <div q:slot="title" class="icon icon-cli">
             CLI Commands
