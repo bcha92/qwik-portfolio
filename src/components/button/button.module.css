@@ -1,0 +1,35 @@
+.button {
+  margin: 0.25rem;
+  padding: 0.25rem;
+}
+
+.external {
+  border-radius: 50%;
+  margin: 0.25rem;
+  padding: 1rem;
+
+  span {
+    display: none;
+  }
+
+  @media screen and (min-width: 400px) {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 20%;
+  }
+
+  @media screen and (min-width: 600px) {
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0.25rem;
+    padding: 1rem;
+    border-radius: 15px;
+
+    span {
+      display: inline-block;
+    }
+  }
+}
