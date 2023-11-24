@@ -32,24 +32,7 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export default component$(() => {
-  useStyles$(styles); // styles.css
-
-  // useVisibleTask$(() => {
-  //   console.log(
-  //     getPageHeight(document.documentElement.childNodes),
-  //     window.screen.height,
-  //   );
-
-  //   const phil = document.getElementById("featured");
-  //   let done = false;
-  //   onscroll = () => {
-  //     console.log(window.scrollY);
-  //     if (!done && phil && window.scrollY > phil.getBoundingClientRect().y) {
-  //       console.log("yay!");
-  //       done = true;
-  //     }
-  //   };
-  // });
+  useStyles$(styles);
   return (
     <>
       <Header />
