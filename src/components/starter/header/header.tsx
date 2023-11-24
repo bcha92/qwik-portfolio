@@ -11,8 +11,7 @@ export default component$(() => {
         <Link href="#about" onClick$={() => nav("#")}>
           About
         </Link>
-        <Link href="#featured" onClick$={() => nav("#featured")}>
-          {/* TODO: set href and onClick$ to #featured for desktop and header html id to "featured" */}
+        <Link href="#projects" onClick$={() => nav("#projects")}>
           Featured
         </Link>
       </div>

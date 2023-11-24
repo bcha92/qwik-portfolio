@@ -8,7 +8,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
         isHidden ? "hidden" : ""
       } flex flex-col items-center justify-center`}
     >
-      <h2 id="featured">✨Featured</h2>
+      <h2 id="projects">✨Projects</h2>
     </div>
   );
 });
