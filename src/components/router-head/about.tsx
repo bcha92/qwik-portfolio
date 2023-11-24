@@ -10,22 +10,24 @@ export default component$<HiddenProp>(({ isHidden }) => {
     (new Date().getTime() - new Date("2022-01-04").getTime()) / 31557600000;
 
   useStylesScoped$(`
-    .about > p {
-      margin: 0.5em 0;
-      text-align: center;
-    }
+    .about {
+      margin: -3em auto -2em;
+      padding: 0 1em;
 
-    ul {
-      margin-top: 1em;
-    }
-    
-    @media screen and (min-width: 768px) {
-      ul {
-        width: 60%;
+      > p, ul {
+        margin-top: 1em;
       }
-      
-      .about > p {
-        max-width: 32vw;
+
+      > p {
+        max-width: 50rem;
+        margin: 0.5em auto;
+        text-align: center;
+      }
+
+      > ul {
+        display: flex;
+        justify-content: space-around;
+        max-width: 60rem;
       }
     }
   `);
@@ -37,7 +39,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
       } flex flex-col items-center justify-center`}
     >
       <h2 id="about">⭐About Me</h2>
-      <Image class="w-9/10 m-4 rounded-full" />
+      <Image class="m-5 w-4/5 max-w-xs rounded-full" />
 
       <p>
         👋 My name is Brandon Cha, and I am a full-stack software engineer 👨‍💻
