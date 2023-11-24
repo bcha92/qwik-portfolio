@@ -15,6 +15,7 @@
  */
 
 :root {
+  /* Root Colors */
   --qwik-dark-blue: #006ce9;
   --qwik-light-blue: #18b6f6;
   --qwik-light-purple: #ac7ff4;
@@ -22,6 +23,11 @@
   --qwik-dirty-black: #1d2033;
   --qwik-dark-background: #151934;
   --qwik-dark-text: #ffffff;
+
+  --header-background: var(--qwik-dark-background);
+
+  /* Styles */
+  --header-size: 4em;
 }
 
 html {

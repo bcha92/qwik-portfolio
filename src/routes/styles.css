@@ -25,6 +25,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  padding-top: var(--header-size);
+}
+
 /* HEADINGS ------------------------------------- */
 h1,
 h2,
@@ -45,9 +49,11 @@ h3 .highlight {
 h2 {
   font-weight: 400;
   font-size: 2.4rem;
-}
-h2 .highlight {
-  font-weight: 700;
+  padding-top: calc(var(--header-size) / 2.5);
+
+  .highlight {
+    font-weight: 700;
+  }
 }
 
 h3 {
@@ -60,6 +66,7 @@ h3 {
   }
   h2 {
     font-size: 3.4rem;
+    padding-top: calc(var(--header-size) / 3);
   }
   h3 {
     font-size: 3rem;
@@ -85,7 +92,7 @@ ul {
 /* CONTAINER ------------------------------------ */
 .container {
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: 0;
 }
 .container.container-purple {
   background: var(--qwik-light-purple);
@@ -101,12 +108,12 @@ ul {
   /* does nothing on mobile */
 }
 .container.container-spacing-xl {
-  padding: 50px 40px;
+  /* padding: 50px 40px; */
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    padding: 50px 80px;
+    padding: 0;
   }
   .container.container-spacing-xl {
     padding: 100px 60px;

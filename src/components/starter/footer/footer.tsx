@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useServerTimeLoader } from "~/routes/layout";
+import { QwikLogo } from "../icons/qwik";
 import styles from "./footer.module.css";
 
 const dateOptions: Intl.DateTimeFormatOptions = {
@@ -13,18 +14,18 @@ export default component$(() => {
   const serverTime = useServerTimeLoader();
 
   return (
-    <footer>
-      <div class="container">
-        <a href="https://www.builder.io/" target="_blank" class={styles.anchor}>
-          <span>Created with Qwik ♡ by Builder.io</span>
-          <span class={styles.spacer}>|</span>
-          <span>
-            {new Date(serverTime.value.date).toLocaleDateString(
-              undefined,
-              dateOptions,
-            )}
-          </span>
+    <footer class="m-5">
+      <div class={[styles.anchor, "container"]}>
+        <a href="https://www.builder.io/" target="_blank">
+          Created with <QwikLogo width={45} height={18} />
         </a>
+        <span class={styles.spacer}>|</span>
+        <span>
+          {new Date(serverTime.value.date).toLocaleDateString(
+            undefined,
+            dateOptions,
+          )}
+        </span>
       </div>
     </footer>
   );

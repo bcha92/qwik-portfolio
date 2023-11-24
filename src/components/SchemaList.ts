@@ -37,6 +37,24 @@ export interface ButtonProps {
   onTouch?: QwikTouchEvent<HTMLButtonElement>;
 }
 
+export type ConfettiSetting = {
+  spread: number;
+  ticks: number;
+  gravity: number;
+  decay: number;
+  startVelocity: number;
+  colors: string[];
+  origin: {
+    x: number;
+    y: number;
+  };
+};
+
+export type ConfettiOverride = {
+  particleCount: number;
+  scalar: number;
+};
+
 // Do Nothing Actions
 // export const DNmouse = (): QwikMouseEvent<HTMLButtonElement, MouseEvent> => {};
 

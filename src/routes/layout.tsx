@@ -1,4 +1,9 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import {
+  component$,
+  Slot,
+  useStyles$,
+  // useVisibleTask$,
+} from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
@@ -6,6 +11,7 @@ import Header from "~/components/starter/header/header";
 import Footer from "~/components/starter/footer/footer";
 
 import styles from "./styles.css?inline";
+// import getPageHeight from "~/functions/getPageHeight";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -18,6 +24,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
   });
 };
 
+// Footer use only // routeLoader$ can only be used in layout.tsx
 export const useServerTimeLoader = routeLoader$(() => {
   return {
     date: new Date().toISOString(),
