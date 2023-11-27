@@ -1,0 +1,43 @@
+.card {
+  margin: 0 0.75em;
+  border: 1px solid white;
+  min-width: 150px;
+  min-height: 150px;
+}
+
+.card-focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  background: #fff;
+
+  > img,
+  div {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  > div {
+    width: 150px;
+    height: 150px;
+  }
+
+  > span {
+    position: absolute;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+  }
+}

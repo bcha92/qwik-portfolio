@@ -17,6 +17,15 @@ export interface ExternalInfoProps extends BasicInfoProps {
   color?: string;
 }
 
+// ../../assets/ExternalInfo.json schema
+export type ExternalInfoProjectsProps = {
+  projects?: ExternalInfoProps[];
+};
+
+export type ExternalInfoLinksProps = {
+  links?: ExternalInfoProps[];
+};
+
 // For <svg> and <path>
 export interface SVGProps {
   path: string;

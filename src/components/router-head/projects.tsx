@@ -1,7 +1,15 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import Carousel from "../carousel/carousel";
 import type { HiddenProp } from "../SchemaList";
+import { projects } from "../../assets/ExternalInfo.json";
 
 export default component$<HiddenProp>(({ isHidden }) => {
+  useStylesScoped$(`
+    .featured {
+      margin: 2em 0 4em;
+    }
+  `);
+
   return (
     <div
       class={`featured container ${
@@ -9,6 +17,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
       } flex flex-col items-center justify-center`}
     >
       <h2 id="projects">✨Projects</h2>
+      <Carousel projects={projects} />
     </div>
   );
 });
