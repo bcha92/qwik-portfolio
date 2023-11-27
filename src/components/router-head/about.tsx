@@ -3,7 +3,7 @@ import type { HiddenProp, ExternalInfoProps } from "../SchemaList";
 import ExternalButton from "../button/external-button";
 
 import Image from "~/media/profile.png?jsx";
-import ExternalInfo from "../../assets/ExternalInfo.json";
+import { links } from "../../assets/ExternalInfo.json";
 
 export default component$<HiddenProp>(({ isHidden }) => {
   const expCalc: number =
@@ -56,7 +56,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
       </p>
 
       <ul class="flex flex-wrap items-center justify-evenly">
-        {ExternalInfo.map((info: ExternalInfoProps) =>
+        {links.map((info: ExternalInfoProps) =>
           info.path ? (
             <ExternalButton
               key={info.id}

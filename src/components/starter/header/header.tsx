@@ -12,7 +12,7 @@ export default component$(() => {
           About
         </Link>
         <Link href="#projects" onClick$={() => nav("#projects")}>
-          Featured
+          Projects
         </Link>
       </div>
     </header>

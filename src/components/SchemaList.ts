@@ -3,6 +3,7 @@ import type { QwikMouseEvent, QwikTouchEvent } from "@builder.io/qwik";
 type BasicInfoProps = {
   id: string;
   name: string;
+  description?: string;
 };
 
 export interface HiddenProp {
