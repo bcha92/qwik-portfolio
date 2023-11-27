@@ -3,6 +3,7 @@ import type { QwikMouseEvent, QwikTouchEvent } from "@builder.io/qwik";
 type BasicInfoProps = {
   id: string;
   name: string;
+  description?: string;
 };
 
 export interface HiddenProp {
@@ -15,6 +16,15 @@ export interface ExternalInfoProps extends BasicInfoProps {
   background?: string;
   color?: string;
 }
+
+// ../../assets/ExternalInfo.json schema
+export type ExternalInfoProjectsProps = {
+  projects?: ExternalInfoProps[];
+};
+
+export type ExternalInfoLinksProps = {
+  links?: ExternalInfoProps[];
+};
 
 // For <svg> and <path>
 export interface SVGProps {
