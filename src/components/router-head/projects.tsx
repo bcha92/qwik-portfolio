@@ -6,7 +6,7 @@ import projects from "../../assets/ExternalInfo";
 export default component$<HiddenProp>(({ isHidden }) => {
   useStylesScoped$(`
     .featured {
-      margin: 2em 0 4em;
+      margin: 2em auto 4em;
     }
   `);
 
