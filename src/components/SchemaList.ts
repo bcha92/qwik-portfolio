@@ -64,8 +64,3 @@ export type ConfettiOverride = {
   particleCount: number;
   scalar: number;
 };
-
-// Do Nothing Actions
-// export const DNmouse = (): QwikMouseEvent<HTMLButtonElement, MouseEvent> => {};
-
-// export const DNtouch = (): QwikTouchEvent<HTMLButtonElement> => {};

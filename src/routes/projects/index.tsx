@@ -1,14 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import About from "~/components/router-head/about";
-
-import Featured from "~/components/router-head/projects";
+import { About, Projects } from "~/components/feature";
 
 export default component$(() => {
   return (
     <>
       <About />
-      <Featured isHidden={true} />
+      <Projects isHidden={true} />
     </>
   );
 });

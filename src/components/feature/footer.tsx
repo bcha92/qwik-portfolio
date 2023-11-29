@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useServerTimeLoader } from "~/routes/layout";
-import { QwikLogo } from "../icons/qwik";
+import { QwikLogo } from "../starter/icons/qwik";
 import styles from "./footer.module.css";
 
 const dateOptions: Intl.DateTimeFormatOptions = {

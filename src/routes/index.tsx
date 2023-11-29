@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import About from "~/components/router-head/about";
-import Projects from "~/components/router-head/projects";
+import { About, Projects } from "~/components/feature";
 
 export default component$(() => {
   return (
