@@ -15,7 +15,8 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
     currentIndex.value = newValue;
   });
 
-  const { name, link, description, background } = projects[currentIndex.value];
+  const { id, name, link, description, background } =
+    projects[currentIndex.value];
 
   useStylesScoped$(`
     .carousel {
@@ -46,6 +47,7 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
         disabled={currentIndex.value <= 0}
       />
       <Card
+        key={id}
         name={name}
         link={link}
         description={description}
