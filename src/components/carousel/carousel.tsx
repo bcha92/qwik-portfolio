@@ -5,7 +5,7 @@ import type { ExternalInfoProjectsProps } from "../SchemaList";
 import FourOhFour from "../404/404";
 
 export default component$(({ projects }: ExternalInfoProjectsProps) => {
-  if (!projects) return <FourOhFour />;
+  if (!projects || projects.length === 0) return <FourOhFour />;
 
   const currentIndex = useSignal(0);
   const newIndex = $((newValue: number) => {
