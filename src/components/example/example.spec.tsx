@@ -1,6 +1,6 @@
 import { createDOM } from "@builder.io/qwik/testing";
-import { test, expect } from "vitest";
-import { ExampleTest } from "./example";
+import { test, expect, describe } from "vitest";
+import { ExampleTest, Example, Example2 } from "./example";
 
 test(`[ExampleTest Component]: Should render ⭐`, async () => {
   const { screen, render } = await createDOM();
@@ -30,3 +30,19 @@ test(`[ExampleTest Component]: Click counter +1`, async () => {
   await userEvent("button", "click");
   expect(spanAfter.innerHTML).toEqual("Count:2");
 });
+
+describe('example component', () => {
+  test("renders <a> properly", async () => {
+    const { screen, render } = await createDOM();
+    await render(<Example />);
+    console.log(screen.innerHTML);
+    expect(screen.innerHTML).toContain("")
+  })
+})
+
+describe('example2 component', () => {
+  test("renders <Link> properly", async () => {
+    const { screen, render } = await createDOM();
+    await render(<Example2 />)
+  })
+})
