@@ -9,7 +9,7 @@ export default component$(
     return (
       <a href={link} target="_blank" class={styles.card}>
         <div class={styles["card-focus"]}>
-          {background && background.length > 1 ? (
+          {background && background.length > 1 && (
             <img
               src={background}
               alt={description}
@@ -17,8 +17,6 @@ export default component$(
               height={150}
               placeholder={color}
             />
-          ) : (
-            <div />
           )}
           <span>{name}</span>
         </div>

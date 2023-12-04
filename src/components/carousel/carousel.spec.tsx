@@ -16,17 +16,17 @@ const projectMock: ExternalInfoProps[] = [
 
 // useNavigate() render error: Qwik Error Code #13
 
-// describe('Carousel Component without:', () => {
-//     test('project should render 404', async () => {
+// describe('Carousel Component without a project:', () => {
+//     test('should render 404 on undefined project', async () => {
 //         const { screen, render } = await createDOM();
 //         await render(<Carousel />)
-//         console.log(screen.querySelector(".four-oh-four"))
-//         expect(screen.className);
+//         // expect()
 //     })
     
-//     test('at least one project array should also render 404', async () => {
+//     test('should also render 404 if project array is empty', async () => {
 //         const { screen, render } = await createDOM();
 //         await render(<Carousel projects={[]} />);
+//         // expect()
 //     })
 // });
 
@@ -50,14 +50,23 @@ describe('Carousel Component with one project:', async () => {
 describe('Carousel Component with at least two projects:', async () => {
     const { screen, render, userEvent } = await createDOM();
     await render(<Carousel projects={projectMock} />);
+    const prev = screen.querySelector(".previous");
+    const next = screen.querySelector(".next");
+    
+    test('renders card component between the buttons', () => {
+        expect(screen.querySelector("a")?.className).toContain("card");
+    })
 
-    test('renders correct name on first project', async () => {
+    test('renders correct name on first project', () => {
         expect(screen.innerHTML).toContain(projectMock[0].name);
     })
 
-    test('previous button is disabled when on first component', async () => {
-        const prev = screen.querySelector(".previous");
+    test('previous button is disabled when on first component', () => {
         expect(prev?.className).toContain("disabled");
+    })
+
+    test('next button is not disabled on first component', () => {
+        expect(next?.className).not.toContain("disabled");
     })
 
     test('renders correct name on second project', async () => {
@@ -65,8 +74,11 @@ describe('Carousel Component with at least two projects:', async () => {
         expect(screen.innerHTML).toContain(projectMock[1].name);
     })
 
-    test('next button is disabled when on last component', async () => {
-        const next = screen.querySelector(".next");
+    test('previous button is not disabled on second component', () => {
+        expect(prev?.className).not.toContain("disabled");
+    })
+
+    test('next button is disabled when on last component', () => {
         expect(next?.className).toContain("disabled");
     })
 });

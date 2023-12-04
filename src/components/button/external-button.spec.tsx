@@ -10,12 +10,18 @@ const mockConfig: ButtonProps = {
     }
 }
 
-describe('External Button Component without SVG:', () => {
-    test('Rendered with #example href tag', async () => {
-        const { screen, render } = await createDOM();
-        await render(<Button href={mockConfig.href} />);
+describe('External Button Component without SVG:', async () => {
+    const { screen, render } = await createDOM();
+    await render(<Button href={mockConfig.href} />);
+
+    test('rendered with #example href tag', () => {
         expect(screen.innerHTML).toContain("#example");
     });
+
+    test('does not contain svg', () => {
+        expect(screen.innerHTML).not.toContain("svg");
+        expect(screen.innerHTML).not.toContain("path");
+    })
 })
 
 describe('External Button Component with SVG:', async () => {

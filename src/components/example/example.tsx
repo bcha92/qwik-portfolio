@@ -1,5 +1,4 @@
 import { component$, useStore } from "@builder.io/qwik";
-import { useNavigate, Link } from "@builder.io/qwik-city";
 
 export const ExampleTest = component$((props: { flag: boolean }) => {
   const state = useStore({
@@ -16,14 +15,3 @@ export const ExampleTest = component$((props: { flag: boolean }) => {
     </>
   );
 });
-
-export const Example = component$(() => {
-  const navigateTo = useNavigate();
-  return (
-    <a class="example-link" href="/" onClick$={() => navigateTo("/")}>
-      Home
-    </a>
-  );
-});
-
-export const Example2 = component$(() => <Link href="/" />);
