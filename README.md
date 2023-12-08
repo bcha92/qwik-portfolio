@@ -1,65 +1,57 @@
-# Qwik City App ⚡️
+# Portfolio created with QwikJS and QwikCity ⚡️
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+<img src="./src/media/qwiksite-1.png" alt="About Me page preview using QwikJS layout" />
+
+Hi, so this is a bit of a passion project of mine and I wanted to experiment with some fast-running framework, and what better to do it than for a portfolio when building a near-O(1) complexity framework!
+
+While I'll be periodicially update this site as needed (e.g. adding animations and stuff), I hope you can also appreciate the wonders of this underrated framework!
 
 ---
 
-## Project Structure
+### Live: TBD
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+---
 
-Inside your project, you'll see the following directory structure:
+#### More information on QwikJS here: [Docs](https://qwik.builder.io/) | [Discord](https://qwik.builder.io/chat) | [GitHub](https://github.com/BuilderIO/qwik) | [X](https://twitter.com/QwikDev) | [Vite](https://vitejs.dev/)
+
+---
+
+## Portfolio Structure
+
+This project uses [QwikCity](https://qwik.builder.io/qwikcity/overview/) to maintain a tree directory on top of Qwik to make it easier to build a full site.
+
+Only the About page and the Projects page are available at this time.
+
+<!-- TO BE ADDED IN THE FUTURE: The layout will vary between mobile and tablet/desktop views above 768px. -->
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+├ About (../components/feature/About.tsx)
+└ Projects (../components/feature/Projects.tsx)
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+## Custom 404 Page
 
-- `src/components`: Recommended directory for components.
+<img src="./src/media/404.png" alt="Custom 404 page with a construction emoji in the header and a 'click here' link to redirect to home page" />
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+## Integrations and Deployment
 
-## Add Integrations and deployment
+The site is currently using Vercel Edge for deployment.
+Vitest is also used for unit testing and custom component rendering checks prior to deployment changes.
 
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+## Steps to Run in Local Host
 
-```shell
-npm run qwik add # or `yarn qwik add`
-```
+1. Clone repository to your machine (e.g. Git Clone `HTTP` or `SSH`)
+2. Open the terminal of your choice and use `npm install` or `yarn install` to install the dependencies on your machine
+3. Run the site on your machine with `npm run dev`
 
-## Development
+Other Useful Commands:
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `yarn start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-npm run build # or `yarn build`
-```
+|                    |                                       |
+| ------------------ | ------------------------------------- |
+| `qwik`             | Run Qwik                              |
+| `npm run test`     | Run vitest for unit testing           |
+| `npm run build`    | Run Qwik to create a deployment build |
+| `npm run preview`  | Run Qwik to view the deployment build |
+| `npm run deploy`   | Run Vercel to Deploy to Edge          |
+| `npm run prettier` | Run Prettier to Inspect and Fix       |
+| `npm run lint`     | Run eslint                            |
