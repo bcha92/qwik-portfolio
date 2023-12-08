@@ -5,14 +5,14 @@ import projects from "../../assets/ExternalInfo";
 
 export default component$<HiddenProp>(({ isHidden }) => {
   useStylesScoped$(`
-    .featured {
+    .projects {
       margin: 2em auto 4em;
     }
   `);
 
   return (
     <div
-      class={`featured container ${
+      class={`projects container ${
         isHidden ? "hidden" : ""
       } flex flex-col items-center justify-center`}
     >

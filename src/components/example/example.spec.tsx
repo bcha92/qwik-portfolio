@@ -1,5 +1,5 @@
 import { createDOM } from "@builder.io/qwik/testing";
-import { test, expect } from "vitest";
+import { test, expect, describe } from "vitest";
 import { ExampleTest } from "./example";
 
 test(`[ExampleTest Component]: Should render ⭐`, async () => {
