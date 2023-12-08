@@ -2,7 +2,7 @@
   "name": "brandon-cha-qwik-js-portfolio",
   "description": "Brandon Cha's Portfolio using QwikJS",
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "private": true,
   "trustedDependencies": [
