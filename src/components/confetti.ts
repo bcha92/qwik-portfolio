@@ -34,12 +34,11 @@ const loadConfetti = () =>
     script.remove();
   });
 
-const confetti = await loadConfetti();
-
-export default function shootConfetti(
+export default async function shootConfetti(
   config: ConfettiSetting = defaultSetting,
   opts: ConfettiOverride[] = defaultOptions,
 ) {
+  const confetti = await loadConfetti();
   for (let i = 0; i < opts.length; i++) {
     confetti({
       ...config,

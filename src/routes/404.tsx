@@ -1,6 +1,8 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { Link, useNavigate } from "@builder.io/qwik-city";
 
+// 404 page redirect // does not work in development
+// see https://qwik.builder.io/docs/advanced/routing/#custom-404-page for more details
 export default component$(() => {
   const nav = useNavigate();
 
