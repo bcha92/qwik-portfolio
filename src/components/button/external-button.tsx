@@ -9,6 +9,7 @@ export default component$<ButtonProps>(
       <a
         href={href}
         target="_blank"
+        rel="noopener noreferrer"
         class={[styles.button, styles.external, "flex items-center"]}
         style={{
           color,
