@@ -7,7 +7,12 @@ type CardProps = Omit<ExternalInfoProps, "id">;
 export default component$(
   ({ name, description, background, color, link }: CardProps) => {
     return (
-      <a href={link} target="_blank" class={styles.card}>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={styles.card}
+      >
         <div class={styles["card-focus"]}>
           {background && background.length > 1 && (
             <img
