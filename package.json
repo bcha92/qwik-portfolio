@@ -48,9 +48,5 @@
     "vite": "^4.4.12",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/speed-insights": "^1.0.1"
   }
 }
