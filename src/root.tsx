@@ -5,8 +5,10 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/feature/";
-
 import "./global.css";
+
+import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
 export default component$(() => {
   /**
@@ -15,6 +17,10 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
+
+  // Vercel Analytics and Speed Insights
+  inject();
+  injectSpeedInsights({});
 
   return (
     <QwikCityProvider>
