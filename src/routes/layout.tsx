@@ -5,13 +5,6 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 import { Header, Footer } from "~/components/feature";
 import styles from "./styles.css?inline";
 
-import { inject } from "@vercel/analytics";
-import { injectSpeedInsights } from "@vercel/speed-insights";
-
-// Vercel Analytics and Speed Insights
-inject();
-injectSpeedInsights({});
-
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
