@@ -15,7 +15,7 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
     currentIndex.value = newValue;
   });
 
-  const { id, name, link, description, background } =
+  const { id, name, link, description, background, opacity } =
     projects[currentIndex.value];
 
   useStylesScoped$(`
@@ -52,6 +52,7 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
         link={link}
         description={description}
         background={background}
+        opacity={opacity}
       />
       <button
         class={`carousel-button next ${

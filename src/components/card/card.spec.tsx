@@ -1,9 +1,9 @@
 import { createDOM } from "@builder.io/qwik/testing";
 import { describe, test, expect } from "vitest";
 import Card from "./card";
-import parsedProjects from "~/assets/ExternalInfo";
+import { defaultProjects } from "~/assets/DefaultInfo";
 
-const { name, link, description, color, background } = parsedProjects()[0];
+const { name, link, description, color, background } = defaultProjects[0];
 
 describe('Card Component without image:', async () => {
     const { screen, render } = await createDOM();
