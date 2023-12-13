@@ -5,7 +5,7 @@ import styles from "./card.module.css";
 type CardProps = Omit<ExternalInfoProps, "id">;
 
 export default component$(
-  ({ name, description, background, color, link }: CardProps) => {
+  ({ name, description, background, color, opacity, link }: CardProps) => {
     return (
       <a
         href={link}
@@ -23,7 +23,11 @@ export default component$(
               placeholder={color}
             />
           )}
-          <span>{name}</span>
+          <span
+            style={{ background: `rgba(255, 255, 255, ${opacity || 0.8})` }}
+          >
+            {name}
+          </span>
         </div>
       </a>
     );

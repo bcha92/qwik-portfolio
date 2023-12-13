@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import Carousel from "../carousel/carousel";
 import type { HiddenProp } from "../SchemaList";
-import projects from "../../assets/ExternalInfo";
+import { defaultProjects } from "../../assets/DefaultInfo";
 
 export default component$<HiddenProp>(({ isHidden }) => {
   useStylesScoped$(`
@@ -17,7 +17,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
       } flex flex-col items-center justify-center`}
     >
       <h2 id="projects">✨Projects</h2>
-      <Carousel projects={projects()} />
+      <Carousel projects={defaultProjects} />
     </div>
   );
 });
