@@ -15,9 +15,10 @@ export interface ExternalInfoProps extends BasicInfoProps {
   link?: string;
   background?: string;
   color?: string;
+  opacity?: number | string;
 }
 
-// ../../assets/ExternalInfo.json schema
+// ../../assets/ExternalInfo.ts schema
 export type ExternalInfoProjectsProps = {
   projects?: ExternalInfoProps[];
 };
