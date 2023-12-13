@@ -1,7 +1,7 @@
 import type { ExternalInfoProps } from "~/components/SchemaList";
-import QwikPortfolioImage from "../media/qwiksite-1.png";
-import LettyImage from "./projects/0.png";
-import DigitalDenImage from "./projects/1.png";
+import QwikPortfolioImage from "../media/qwiksite-1.webp";
+import LettyImage from "./projects/0.webp";
+import DigitalDenImage from "./projects/1.webp";
 
 export const defaultExternalLinks: ExternalInfoProps[] = [
   {

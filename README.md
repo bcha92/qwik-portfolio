@@ -1,6 +1,6 @@
 # Portfolio created with QwikJS and QwikCity ⚡️
 
-<img src="./src/media/qwiksite-1.png" alt="About Me page preview using QwikJS layout" />
+<img src="./src/media/qwiksite-1.webp" alt="About Me page preview using QwikJS layout" />
 
 Hi, so this is a bit of a passion project of mine and I wanted to experiment with some fast-running framework, and what better to do it than for a portfolio when building a near-O(1) complexity framework!
 
@@ -31,7 +31,7 @@ Only the About page and the Projects page are available at this time.
 
 ## Custom 404 Page
 
-<img src="./src/media/404.png" alt="Custom 404 page with a construction emoji in the header and a 'click here' link to redirect to home page" />
+<img src="./src/media/404.webp" alt="Custom 404 page with a construction emoji in the header and a 'click here' link to redirect to home page" />
 
 ## Integrations and Deployment
 

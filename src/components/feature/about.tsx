@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { HiddenProp, ExternalInfoProps } from "../SchemaList";
 import ExternalButton from "../button/external-button";
 
-import Image from "~/media/profile.png?jsx";
+import Image from "~/media/profile.webp?jsx";
 import { defaultExternalLinks } from "../../assets/DefaultInfo";
 
 export default component$<HiddenProp>(({ isHidden }) => {
