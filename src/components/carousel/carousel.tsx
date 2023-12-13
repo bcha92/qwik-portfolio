@@ -45,6 +45,9 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
         }`}
         onClick$={() => newIndex(currentIndex.value - 1)}
         disabled={currentIndex.value <= 0}
+        aria-label={`${
+          currentIndex.value <= 0 ? "disabled" : ""
+        } button previous project`}
       />
       <Card
         key={id}
@@ -60,6 +63,9 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
         }`}
         onClick$={() => newIndex(currentIndex.value + 1)}
         disabled={currentIndex.value >= projects.length - 1}
+        aria-label={`${
+          currentIndex.value <= 0 ? "disabled" : ""
+        } button next project`}
       />
     </div>
   );
