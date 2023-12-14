@@ -3,7 +3,7 @@
   "description": "Brandon Cha's Portfolio using QwikJS",
   "version": "1.0.1",
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "private": true,
   "trustedDependencies": [
