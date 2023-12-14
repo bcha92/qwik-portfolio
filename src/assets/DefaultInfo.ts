@@ -1,4 +1,5 @@
 import type { ExternalInfoProps } from "~/components/SchemaList";
+import QwikPortfolioImage from "../media/qwiksite-1.png";
 import LettyImage from "./projects/0.png";
 import DigitalDenImage from "./projects/1.png";
 
@@ -47,12 +48,19 @@ export const defaultExternalLinks: ExternalInfoProps[] = [
 
 export const defaultProjects: ExternalInfoProps[] = [
   {
+    id: "bcha92/qwik-portfolio",
+    name: "Qwik-Portfolio",
+    description:
+      "This website's repository source on Github, created with QwikJS for O(1) complexity framework",
+    link: "https://github.com/bcha92/qwik-portfolio",
+    background: QwikPortfolioImage,
+  },
+  {
     id: "bcha92/letty",
     name: "Letty",
     description:
       "Concept website for short term commercial space rental and reservations",
     link: "https://www.github.com/bcha92/letty",
-    color: "#fff",
     background: LettyImage,
   },
   {
@@ -61,7 +69,6 @@ export const defaultProjects: ExternalInfoProps[] = [
     description:
       "Concept website for e-commerce website, a collaboration project by Brandon Cha, Kishant Kanaka, Muhaned Marafawi, and Piyush Patel",
     link: "https://www.github.com/bcha92/digitalden",
-    color: "#fff",
     background: DigitalDenImage,
     opacity: 0.6,
   },

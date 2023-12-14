@@ -39,7 +39,10 @@ export default component$<HiddenProp>(({ isHidden }) => {
       } flex flex-col items-center justify-center`}
     >
       <h2 id="about">⭐About Me</h2>
-      <Image class="m-5 w-4/5 max-w-xs rounded-full" />
+      <Image
+        class="m-5 w-4/5 max-w-xs rounded-full"
+        alt="front-facing mugshot of Brandon Cha staring at you the user with colourful, opened, umbrellas hanging in the sky at the Stackt (sic) market in Toronto, Canada"
+      />
 
       <p>
         👋 My name is Brandon Cha, and I am a full-stack software engineer 👨‍💻
@@ -55,7 +58,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
         While you're here, checkout my links and my favorite projects below 👇!
       </p>
 
-      <ul class="flex flex-wrap items-center justify-evenly">
+      <div class="flex flex-wrap items-center justify-evenly">
         {defaultExternalLinks.map((info: ExternalInfoProps) =>
           info.path ? (
             <ExternalButton
@@ -76,7 +79,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
             />
           ),
         )}
-      </ul>
+      </div>
     </div>
   );
 });

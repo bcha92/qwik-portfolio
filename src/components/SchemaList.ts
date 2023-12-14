@@ -40,7 +40,7 @@ export interface SVGProps {
 export interface ButtonProps {
   href: string;
   svg?: SVGProps;
-  text?: string | number;
+  text?: string;
   color?: string;
   background?: string;
   borderColor?: string;

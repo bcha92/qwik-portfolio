@@ -16,6 +16,7 @@ export default component$<ButtonProps>(
           background,
           border: `2px solid ${borderColor || "inherit"}`,
         }}
+        aria-label={text}
       >
         {svg && (
           <SVG
