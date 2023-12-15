@@ -46,12 +46,15 @@ Vitest is also used for unit testing and custom component rendering checks prior
 
 Other Useful Commands:
 
-|                    |                                       |
-| ------------------ | ------------------------------------- |
-| `qwik`             | Run Qwik                              |
-| `npm run test`     | Run vitest for unit testing           |
-| `npm run build`    | Run Qwik to create a deployment build |
-| `npm run preview`  | Run Qwik to view the deployment build |
-| `npm run deploy`   | Run Vercel to Deploy to Edge          |
-| `npm run prettier` | Run Prettier to Inspect and Fix       |
-| `npm run lint`     | Run eslint                            |
+|                         |                                                               |
+| ----------------------- | ------------------------------------------------------------- |
+| `qwik`                  | Run Qwik                                                      |
+| `npm run test`          | Run vitest for unit testing                                   |
+| `npm run build`         | Run Qwik to create a deployment build                         |
+| `npm run preview`       | Run Qwik to preview the deployment build                      |
+| `npm run deploy`        | Run Vercel to Deploy to Edge                                  |
+| `npm run lint`          | Run eslint                                                    |
+| `npm run fmt`           | Run Prettier to Fix Identation Rules                          |
+| `npm run fmt.check`     | Run Prettier to Inspect Identation Rules                      |
+| `npm run checkly`       | Run Checkly in Development (login required, see next command) |
+| `npm run checkly.login` | Login to Checkly                                              |
