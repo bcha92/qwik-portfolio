@@ -14,7 +14,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
       margin: -3em auto -2em;
       padding: 0 1em;
 
-      > p, ul {
+      > p, .external-links {
         margin-top: 1em;
       }
 
@@ -24,7 +24,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
         text-align: center;
       }
 
-      > ul {
+      > external-links {
         display: flex;
         justify-content: space-around;
         max-width: 60rem;
@@ -58,7 +58,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
         While you're here, checkout my links and my favorite projects below 👇!
       </p>
 
-      <div class="flex flex-wrap items-center justify-evenly">
+      <div class="external-links flex flex-wrap items-center justify-evenly">
         {defaultExternalLinks.map((info: ExternalInfoProps) =>
           info.path ? (
             <ExternalButton
