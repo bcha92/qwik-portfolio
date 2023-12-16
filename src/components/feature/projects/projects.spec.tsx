@@ -5,6 +5,7 @@ import Projects from "./projects";
 test("Projects Page Comopnent should not be visible if hidden", async () => {
     const { screen, render } = await createDOM();
     await render(<Projects isHidden={true} />);
+    console.log(screen.querySelector("div")?.className)
     expect(screen.querySelector(".projects")?.className).toContain("hidden");
 })
 
