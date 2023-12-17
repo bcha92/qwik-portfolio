@@ -1,6 +1,6 @@
 import { createDOM } from "@builder.io/qwik/testing";
 import { describe, test, expect } from "vitest";
-import About from "./about";
+import About from "../about/about";
 
 test('About Page Component should not be visible if marked hidden', async () => {
     const { screen, render } = await createDOM();
