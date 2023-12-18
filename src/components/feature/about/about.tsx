@@ -3,7 +3,7 @@ import type { HiddenProp, ExternalInfoProps } from "../../SchemaList";
 import ExternalButton from "../../button/external-button";
 
 import Image from "~/media/profile.webp?jsx";
-import { defaultExternalLinks } from "../../../assets/DefaultInfo";
+import { defaultExternalLinks } from "../../../media/DefaultProps";
 import styles from "./about.module.css";
 
 export default component$<HiddenProp>(({ isHidden }) => {
@@ -42,7 +42,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
         </p>
       </div>
 
-      <div class={(styles["external-links"], "external-links")}>
+      <div class={[styles["external-links"], "external-links"]}>
         {defaultExternalLinks.map((info: ExternalInfoProps) =>
           info.path ? (
             <ExternalButton

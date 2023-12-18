@@ -15,7 +15,15 @@ export default component$(
       >
         <div class={styles["card-focus"]}>
           {background && background.length > 1 && (
-            <img src={background} alt={description} width={150} height={150} />
+            <picture>
+              <source srcset={background} media="(orientation: portrait)" />
+              <img
+                src={background}
+                alt={description}
+                width={150}
+                height={150}
+              />
+            </picture>
           )}
           <span
             style={{ background: `rgba(255, 255, 255, ${opacity || 0.8})` }}

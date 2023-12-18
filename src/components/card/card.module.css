@@ -14,7 +14,7 @@
   font-weight: bold;
   background: #fff;
 
-  > img {
+  img {
     flex-shrink: 0;
     min-width: 150px;
     min-height: 150px;
