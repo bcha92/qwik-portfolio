@@ -42,7 +42,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
         </p>
       </div>
 
-      <div class={(styles["external-links"], "external-links")}>
+      <div class={[styles["external-links"], "external-links"]}>
         {defaultExternalLinks.map((info: ExternalInfoProps) =>
           info.path ? (
             <ExternalButton
