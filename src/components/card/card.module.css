@@ -40,3 +40,22 @@
     }
   }
 }
+
+@media screen and (min-width: 400px) {
+  .card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card-focus {
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    span {
+      min-width: 200px;
+      height: 200px;
+    }
+  }
+}

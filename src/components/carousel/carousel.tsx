@@ -1,5 +1,6 @@
-import { component$, useSignal, $, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 import Card from "../card/card";
+import styles from "./carousel.module.css";
 import type { ExternalInfoProjectsProps } from "../SchemaList";
 
 import FourOhFour from "../../routes/404";
@@ -18,31 +19,14 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
   const { id, name, link, description, background, opacity } =
     projects[currentIndex.value];
 
-  useStylesScoped$(`
-    .carousel {
-        margin-top: 2em;
-    }
-
-    .carousel-button {
-        &.previous::after {
-            content: '<';
-        }
-
-        &.next::after {
-            content: '>';
-        }
-
-        &.disabled {
-          background: gray;
-        }
-    }
-  `);
   return (
-    <div class="carousel container flex items-stretch justify-center">
+    <div class={styles.carousel}>
       <button
-        class={`carousel-button previous ${
-          currentIndex.value <= 0 ? "disabled" : ""
-        }`}
+        class={[
+          styles["carousel-button"],
+          styles["previous"],
+          currentIndex.value <= 0 ? styles["disabled"] : "",
+        ]}
         onClick$={() => newIndex(currentIndex.value - 1)}
         disabled={currentIndex.value <= 0}
         aria-label={`${
@@ -58,9 +42,11 @@ export default component$(({ projects }: ExternalInfoProjectsProps) => {
         opacity={opacity}
       />
       <button
-        class={`carousel-button next ${
-          currentIndex.value >= projects.length - 1 ? "disabled" : ""
-        }`}
+        class={[
+          styles["carousel-button"],
+          styles["next"],
+          currentIndex.value >= projects.length - 1 ? styles["disabled"] : "",
+        ]}
         onClick$={() => newIndex(currentIndex.value + 1)}
         disabled={currentIndex.value >= projects.length - 1}
         aria-label={`${

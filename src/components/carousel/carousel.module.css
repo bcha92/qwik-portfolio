@@ -1,0 +1,22 @@
+.carousel {
+  margin-top: 2em;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.carousel-button {
+  font-weight: bolder;
+  &.previous::after {
+    content: "<";
+  }
+
+  &.next::after {
+    content: ">";
+  }
+
+  &.disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+}
