@@ -11,19 +11,28 @@
   span {
     display: none;
   }
+}
 
-  @media screen and (min-width: 400px) {
+/* Large Mobile Screen Size, except tablet */
+@media screen and (min-width: 400px) {
+  .external {
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 20%;
   }
+}
 
-  @media screen and (min-width: 600px) {
+/* Rare case: Larger than Mobile Device, Smaller than Tablet */
+@media screen and (min-width: 600px) {
+  .external {
     padding: 1.5rem 2rem;
     border-radius: 20px;
   }
+}
 
-  @media screen and (min-width: 768px) {
+/* Standard Tablet Size */
+@media screen and (min-width: 768px) {
+  .external {
     margin: 0.25rem;
     padding: 1rem;
     border-radius: 15px;

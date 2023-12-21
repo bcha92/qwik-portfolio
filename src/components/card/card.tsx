@@ -13,7 +13,12 @@ export default component$(
         rel="noopener noreferrer"
         class={styles.card}
       >
-        <div class={styles["card-focus"]}>
+        <div
+          class={[
+            styles["card-focus"],
+            "align-center decoration-none flex justify-center overflow-hidden",
+          ]}
+        >
           {background && background.length > 1 && (
             <picture>
               <source srcset={background} media="(orientation: portrait)" />
@@ -26,6 +31,7 @@ export default component$(
             </picture>
           )}
           <span
+            class="absolute flex flex-wrap items-end justify-center text-center"
             style={{ background: `rgba(255, 255, 255, ${opacity || 0.8})` }}
           >
             {name}

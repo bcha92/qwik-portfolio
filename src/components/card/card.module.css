@@ -1,38 +1,27 @@
-.card {
-  margin: 0 0.75em;
+.card,
+.card-focus img,
+.card-focus span {
   min-width: 150px;
   min-height: 150px;
 }
 
+.card {
+  margin: 0 0.75em;
+}
+
 .card-focus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  text-decoration: none;
   color: #333;
   font-weight: bold;
   background: #fff;
 
   img {
     flex-shrink: 0;
-    min-width: 150px;
-    min-height: 150px;
     object-fit: cover;
   }
 
   > span {
-    position: absolute;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.8);
-    min-width: 150px;
-    min-height: 150px;
-    max-width: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-end;
-    text-align: center;
 
     /* If no card background img is provided */
     &:only-child {
@@ -41,21 +30,21 @@
   }
 }
 
+/* Large Mobile Screen Size */
 @media screen and (min-width: 400px) {
-  .card {
+  .card,
+  .card-focus img,
+  .card-focus span {
     width: 200px;
     height: 200px;
   }
+}
 
-  .card-focus {
-    img {
-      width: 200px;
-      height: 200px;
-    }
-
-    span {
-      min-width: 200px;
-      height: 200px;
-    }
+/* Tablet and higher // In conjunction with parent .projects-grid for larger width sizes */
+@media screen and (min-width: 768px) {
+  .card {
+    border: 5px solid black;
+    /* border-radius: 10%; */
+    box-sizing: content-box;
   }
 }

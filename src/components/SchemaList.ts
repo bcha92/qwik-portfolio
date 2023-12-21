@@ -1,5 +1,3 @@
-import type { QwikMouseEvent, QwikTouchEvent } from "@builder.io/qwik";
-
 type BasicInfoProps = {
   id: string;
   name: string;
@@ -8,6 +6,8 @@ type BasicInfoProps = {
 
 export interface HiddenProp {
   isHidden?: boolean;
+  isDesktopSize?: boolean;
+  screenWidth?: number;
 }
 
 export interface ExternalInfoProps extends BasicInfoProps {
@@ -18,7 +18,7 @@ export interface ExternalInfoProps extends BasicInfoProps {
   opacity?: number | string;
 }
 
-// ../../assets/ExternalInfo.ts schema
+// ../media/DefaultProps.ts schema
 export type ExternalInfoProjectsProps = {
   projects?: ExternalInfoProps[];
 };
@@ -44,8 +44,8 @@ export interface ButtonProps {
   color?: string;
   background?: string;
   borderColor?: string;
-  onClick?: QwikMouseEvent<HTMLButtonElement, MouseEvent>;
-  onTouch?: QwikTouchEvent<HTMLButtonElement>;
+  onClick?: MouseEvent;
+  onTouch?: TouchEvent;
 }
 
 export type ConfettiSetting = {

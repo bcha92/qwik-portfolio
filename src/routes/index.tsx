@@ -1,12 +1,18 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { About, Projects } from "~/components/feature";
 
 export default component$(() => {
+  const scrn = useStore({ width: 0 });
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    scrn.width = screen.width;
+  });
+
   return (
     <>
       <About />
-      <Projects isHidden={false} />
+      <Projects isHidden={false} isDesktopSize={scrn.width > 768} />
     </>
   );
 });

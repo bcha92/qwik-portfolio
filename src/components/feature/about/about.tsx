@@ -19,30 +19,35 @@ export default component$<HiddenProp>(({ isHidden }) => {
       ]}
     >
       <h2 id="about">⭐About Me</h2>
-      <div
-        class={[styles.profile, "flex flex-col items-center justify-center"]}
-      >
+      <div class={[styles.profile, "flex items-center justify-center"]}>
         <Image
           class="m-5 w-4/5 max-w-xs rounded-full"
           alt="front-facing mugshot of Brandon Cha staring at you the user with colourful, opened, umbrellas hanging in the sky at the Stackt (sic) market in Toronto, Canada"
         />
-        <p>
-          👋 My name is Brandon Cha, and I am a full-stack software engineer 👨‍💻
-          with {expCalc.toFixed(1)} years of experience in professional
-          development, starting in entertainment and media with prior experience
-          in dentistry and healthcare.
-        </p>
-        <p>
-          My personal hobbies include taking long walks 🚶, travelling ✈️, and
-          painting 🎨.
-        </p>
-        <p>
-          While you're here, checkout my links and my favorite projects below
-          👇!
-        </p>
+        <div class={styles["profile-text"]}>
+          <p>
+            👋 My name is Brandon Cha, and I am a full-stack software engineer
+            👨‍💻 with {expCalc.toFixed(1)} years of experience in professional
+            development, starting in entertainment and media with prior
+            experience in dentistry and healthcare.
+          </p>
+          <p>
+            My personal hobbies include taking long walks 🚶, travelling ✈️, and
+            painting 🎨.
+          </p>
+          <p>
+            While you're here, checkout my links and my favorite projects below
+            👇!
+          </p>
+        </div>
       </div>
 
-      <div class={[styles["external-links"], "external-links"]}>
+      <div
+        class={[
+          styles["external-links"],
+          "flex flex-wrap items-center justify-around",
+        ]}
+      >
         {defaultExternalLinks.map((info: ExternalInfoProps) =>
           info.path ? (
             <ExternalButton
