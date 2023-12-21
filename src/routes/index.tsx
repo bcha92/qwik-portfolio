@@ -12,7 +12,7 @@ export default component$(() => {
   return (
     <>
       <About />
-      <Projects isHidden={false} isDesktopSize={scrn.width > 768} />
+      <Projects isHidden={false} isDesktopSize={scrn.width >= 768} />
     </>
   );
 });

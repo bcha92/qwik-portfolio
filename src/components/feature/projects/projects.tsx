@@ -10,7 +10,7 @@ export default component$<HiddenProp>(({ isHidden, isDesktopSize = false }) => {
     <div class={[styles.projects, "projects", isHidden && "hidden"]}>
       <h2 id="projects">✨Projects</h2>
       {isDesktopSize ? (
-        <div class={[styles["projects-grid"], "grid gap-4"]}>
+        <div class={[styles["projects-grid"], "grid"]}>
           {defaultProjects.map(
             ({ id, name, description, background, opacity, link }) => (
               <Card

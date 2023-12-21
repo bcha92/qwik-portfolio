@@ -14,6 +14,7 @@ export interface ExternalInfoProps extends BasicInfoProps {
   path?: string;
   link?: string;
   background?: string;
+  bgColor?: string;
   color?: string;
   opacity?: number | string;
 }
