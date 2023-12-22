@@ -33,7 +33,9 @@ export default component$(
           target="_blank"
           rel="noopener noreferrer"
           class={styles["card-focus"]}
-          style={{ width: isExpanded.value ? "auto" : "100%" }}
+          style={{
+            display: isExpanded.value ? "none" : "flex",
+          }}
         >
           {background && background.length > 1 && (
             <picture>
@@ -48,10 +50,7 @@ export default component$(
           )}
           {!isDesktopSize && (
             <span
-              class={[
-                styles.mobile,
-                "flex-wrap items-end justify-center text-center",
-              ]}
+              class={[styles.mobile, "flex-wrap items-end justify-center"]}
               style={{
                 background: `rgba(255, 255, 255, ${opacity || 0.8})`,
               }}
@@ -68,7 +67,6 @@ export default component$(
           }}
           onClick$={() => {
             setExpand(isExpanded.value);
-            console.log(isExpanded.value);
           }}
         >
           <h3>{isExpanded.value ? "»" : "«"}</h3>
