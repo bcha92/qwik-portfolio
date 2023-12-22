@@ -9,12 +9,3 @@
     margin-top: calc(var(--header-size) * -1);
   }
 }
-
-.projects-grid {
-  margin-top: 4em;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  width: 90%;
-  max-width: 1024px;
-  column-gap: 2em;
-  row-gap: 1em;
-}

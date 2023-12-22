@@ -45,7 +45,7 @@ export default component$<HiddenProp>(({ isHidden }) => {
       <div
         class={[
           styles["external-links"],
-          "flex flex-wrap items-center justify-around",
+          "external-links flex flex-wrap items-center justify-around",
         ]}
       >
         {defaultExternalLinks.map((info: ExternalInfoProps) =>

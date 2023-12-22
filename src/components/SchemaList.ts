@@ -18,11 +18,13 @@ export interface ExternalInfoProps extends BasicInfoProps {
   color?: string;
   opacity?: number | string;
   isDesktopSize?: boolean;
+  screenWidth?: number;
 }
 
 // ../media/DefaultProps.ts schema
 export type ExternalInfoProjectsProps = {
   projects?: ExternalInfoProps[];
+  screenWidth?: number;
 };
 
 export type ExternalInfoLinksProps = {

@@ -11,14 +11,15 @@ export default component$(
     background,
     opacity,
     link,
-    // bgColor,
-    // color,
+    screenWidth = 768,
     isDesktopSize = false,
   }: CardProps) => {
     const isExpanded = useSignal(false);
     const setExpand = $((val: boolean) => {
       isExpanded.value = val ? false : true;
     });
+
+    const descMax = Math.floor(screenWidth - 768) / 2.5 + 80;
 
     return (
       <div
@@ -49,7 +50,7 @@ export default component$(
             <span
               class={[
                 styles.mobile,
-                "flex flex-wrap items-end justify-center text-center",
+                "flex-wrap items-end justify-center text-center",
               ]}
               style={{
                 background: `rgba(255, 255, 255, ${opacity || 0.8})`,
@@ -61,7 +62,7 @@ export default component$(
           {!isExpanded.value && <span class={styles.full}>{name}</span>}
         </a>
         <div
-          class={[styles.details, "flex justify-center"]}
+          class={[styles.details, "justify-center"]}
           style={{
             background: `rgba(255, 255, 255,  0.9)`,
           }}
@@ -74,7 +75,13 @@ export default component$(
           {isExpanded.value && (
             <div>
               <h4>{name}</h4>
-              <span>{description}</span>
+              <span>
+                {!description
+                  ? "No description entered. Click the image to learn more."
+                  : description.length < descMax
+                    ? description
+                    : description.slice(0, descMax) + "..."}
+              </span>
             </div>
           )}
         </div>

@@ -26,6 +26,7 @@
   background: rgba(255, 255, 255, 0.8);
   margin-top: -150px;
   position: absolute;
+  display: flex;
 
   /* If no card background img is provided */
   &:only-child {
@@ -42,7 +43,7 @@
 @media screen and (min-width: 400px) {
   .card,
   .card-focus img,
-  .mobile {
+  .card-focus .mobile {
     width: 200px;
     height: 200px;
   }
@@ -81,6 +82,7 @@
 
   .mobile {
     display: none;
+    visibility: none;
   }
 
   .full {

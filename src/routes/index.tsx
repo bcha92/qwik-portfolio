@@ -1,6 +1,7 @@
 import { component$, useVisibleTask$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { About, Projects } from "~/components/feature";
+import styles from "./projects/project.module.css";
 
 export default component$(() => {
   const scrn = useStore({ width: 0 });
@@ -12,9 +13,12 @@ export default component$(() => {
   return (
     <>
       <About />
-      {scrn.width < 1023 && (
-        <Projects isHidden={false} isDesktopSize={scrn.width >= 768} />
-      )}
+      <div class={[styles.wysiwyg, styles["in-index"]]}>
+        <Projects
+          isHidden={scrn.width > 1023}
+          isDesktopSize={scrn.width >= 768}
+        />
+      </div>
     </>
   );
 });

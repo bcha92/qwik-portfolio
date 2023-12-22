@@ -1,11 +1,30 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Projects } from "~/components/feature";
+import styles from "./project.module.css";
+import FourOhFour from "../../routes/404";
 
 export default component$(() => {
+  const scrn = useStore({ width: 0 });
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    scrn.width = screen.width;
+  });
+
   return (
     <>
-      <Projects isDesktopSize={true} />
+      <div
+        class={[
+          styles.wysiwyg,
+          styles.ouch,
+          "flex-col items-center justify-center",
+        ]}
+      >
+        <FourOhFour />
+      </div>
+      <div class={[styles.wysiwyg, styles["in-project"]]}>
+        <Projects isHidden={scrn.width < 768} isDesktopSize={true} />
+      </div>
     </>
   );
 });
