@@ -20,6 +20,7 @@ export default component$<HiddenProp>(({ isHidden, isDesktopSize = false }) => {
                 background={background}
                 opacity={opacity}
                 link={link}
+                isDesktopSize={isDesktopSize}
               />
             ),
           )}

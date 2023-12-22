@@ -1,12 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { About, Projects } from "~/components/feature";
+import { Projects } from "~/components/feature";
 
 export default component$(() => {
   return (
     <>
-      <About />
-      <Projects isHidden={true} />
+      <Projects isDesktopSize={true} />
     </>
   );
 });

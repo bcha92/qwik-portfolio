@@ -1,6 +1,10 @@
 .about {
   margin: -4em auto -2em;
   padding: 0 1em;
+
+  &:only-child {
+    margin-bottom: 2em;
+  }
 }
 
 .profile,

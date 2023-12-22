@@ -13,6 +13,7 @@ export default component$(
     link,
     // bgColor,
     // color,
+    isDesktopSize = false,
   }: CardProps) => {
     const isExpanded = useSignal(false);
     const setExpand = $((val: boolean) => {
@@ -44,17 +45,19 @@ export default component$(
               />
             </picture>
           )}
-          <span
-            class={[
-              styles.mobile,
-              "flex flex-wrap items-end justify-center text-center",
-            ]}
-            style={{
-              background: `rgba(255, 255, 255, ${opacity || 0.8})`,
-            }}
-          >
-            {name}
-          </span>
+          {!isDesktopSize && (
+            <span
+              class={[
+                styles.mobile,
+                "flex flex-wrap items-end justify-center text-center",
+              ]}
+              style={{
+                background: `rgba(255, 255, 255, ${opacity || 0.8})`,
+              }}
+            >
+              {name}
+            </span>
+          )}
           {!isExpanded.value && <span class={styles.full}>{name}</span>}
         </a>
         <div

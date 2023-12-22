@@ -17,6 +17,7 @@ export interface ExternalInfoProps extends BasicInfoProps {
   bgColor?: string;
   color?: string;
   opacity?: number | string;
+  isDesktopSize?: boolean;
 }
 
 // ../media/DefaultProps.ts schema
