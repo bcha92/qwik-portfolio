@@ -25,7 +25,7 @@ describe('About Page Component:', async () => {
         expect(aboutPage?.querySelectorAll("p").length).toBeGreaterThan(0);
     })
 
-    test('should contain <ul> element with at least one child button', () => {
+    test('should contain external links container with at least one child button', () => {
         const externalLinks = aboutPage?.querySelector(".external-links");
         expect(externalLinks).toBeDefined();
         expect(externalLinks?.querySelectorAll("a" || "button").length).toBeGreaterThan(0);

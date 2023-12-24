@@ -34,7 +34,7 @@ export default component$(() => {
     <div class="four-oh-four container flex flex-col items-center justify-center">
       <h2>🚧 Oops...</h2>
       <p>
-        This either is a wrong turn or we are currently fixing this section.
+        This is either a wrong turn or we are currently fixing this section.
       </p>
       <p>
         Please check back again later or click 👉

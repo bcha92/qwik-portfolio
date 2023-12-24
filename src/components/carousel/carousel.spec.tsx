@@ -14,22 +14,6 @@ const projectMock: ExternalInfoProps[] = [
     }
 ];
 
-// useNavigate() render error: Qwik Error Code #13
-
-// describe('Carousel Component without a project:', () => {
-//     test('should render 404 on undefined project', async () => {
-//         const { screen, render } = await createDOM();
-//         await render(<Carousel />)
-//         // expect()
-//     })
-    
-//     test('should also render 404 if project array is empty', async () => {
-//         const { screen, render } = await createDOM();
-//         await render(<Carousel projects={[]} />);
-//         // expect()
-//     })
-// });
-
 describe('Carousel Component with one project:', async () => {
     const { screen, render } = await createDOM();
     await render(<Carousel projects={projectMock.slice(0, 1)} />);

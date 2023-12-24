@@ -1,22 +1,45 @@
 .about {
   margin: -4em auto -2em;
   padding: 0 1em;
-}
 
-.profile {
-  > p {
-    margin-top: 1em;
-    max-width: 50rem;
-    margin: 0.5em auto;
-    text-align: center;
+  &:only-child {
+    margin-bottom: 2em;
   }
 }
 
+.profile,
+.profile-text {
+  flex-direction: column;
+}
+
+.profile-text > p {
+  margin-top: 1em;
+  max-width: 50rem;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
 .external-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
   max-width: 60rem;
   margin-top: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  .profile {
+    flex-direction: row;
+    margin: auto 2em;
+  }
+
+  .profile-text {
+    padding: 1em;
+    > p {
+      margin-top: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    margin-bottom: 2em;
+  }
 }

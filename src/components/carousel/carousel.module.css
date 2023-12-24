@@ -1,0 +1,45 @@
+.carousel {
+  margin-top: 2em;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.mobile {
+  display: flex;
+}
+
+.carousel-button {
+  font-weight: bolder;
+  &.previous::after {
+    content: "<";
+  }
+
+  &.next::after {
+    content: ">";
+  }
+
+  &.disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+}
+
+.full {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+
+  .full {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 40vw));
+    margin: auto 2em;
+    column-gap: 2em;
+    row-gap: 1em;
+    max-width: 1024px;
+  }
+}

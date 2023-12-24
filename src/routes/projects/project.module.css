@@ -1,0 +1,29 @@
+.wysiwyg {
+  &.in-index {
+    display: block;
+  }
+
+  &.in-project {
+    display: none;
+  }
+
+  &.ouch {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .wysiwyg {
+    &.in-index {
+      display: none;
+    }
+
+    &.in-project {
+      display: block;
+    }
+
+    &.ouch {
+      display: none;
+    }
+  }
+}
