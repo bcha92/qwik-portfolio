@@ -19,7 +19,7 @@ export default component$(
       isExpanded.value = val ? false : true;
     });
 
-    const descMax = Math.floor(screenWidth - 768) / 2.5 + 80;
+    const descMax = Math.floor(screenWidth - 768) / 2.5 + 120;
 
     return (
       <div

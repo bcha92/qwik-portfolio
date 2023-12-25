@@ -24,7 +24,6 @@
 .mobile {
   padding: 1rem;
   background: rgba(255, 255, 255, 0.8);
-  margin-top: -150px;
   position: absolute;
   display: flex;
 
@@ -46,10 +45,6 @@
   .card-focus .mobile {
     width: 200px;
     height: 200px;
-  }
-
-  .mobile {
-    margin-top: -200px;
   }
 }
 
