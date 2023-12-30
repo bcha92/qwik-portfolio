@@ -12,20 +12,14 @@ export default component$(() => {
   });
 
   return (
-    <>
-      <div
-        class={[
-          styles.wysiwyg,
-          styles.ouch,
-          "flex-col items-center justify-center",
-        ]}
-      >
+    <div class={styles.wysiwyg}>
+      <div class={[styles.ouch, "flex-col items-center justify-center"]}>
         <FourOhFour />
       </div>
-      <div class={[styles.wysiwyg, styles["in-project"]]}>
+      <div class={[styles["in-project"]]}>
         <Projects isHidden={scrn.width < 768} isDesktopSize={true} />
       </div>
-    </>
+    </div>
   );
 });
 
