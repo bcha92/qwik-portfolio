@@ -1,29 +1,16 @@
-.wysiwyg {
-  &.in-index {
-    display: block;
-  }
-
-  &.in-project {
-    display: none;
-  }
-
-  &.ouch {
-    display: flex;
-  }
+.wysiwyg .in-project {
+  display: none;
 }
 
 @media screen and (min-width: 1024px) {
   .wysiwyg {
-    &.in-index {
+    &.in-index, /* <- For Homepage Only */
+    .ouch {
       display: none;
     }
 
-    &.in-project {
+    .in-project {
       display: block;
-    }
-
-    &.ouch {
-      display: none;
     }
   }
 }
