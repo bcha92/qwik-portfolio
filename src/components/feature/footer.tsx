@@ -1,23 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { useServerTimeLoader, dateOptions } from "~/routes";
+import { dateOptions } from "~/routes";
 import { QwikLogo } from "../starter/icons/qwik";
 import styles from "./footer.module.css";
+import type { ServerTimeProps } from "../SchemaList";
 
-const ServerTimeComponent = component$(() => {
-  const serverTime = useServerTimeLoader();
-
-  return (
-    <>
-      {new Date(serverTime.value.date).toLocaleDateString(
-        undefined,
-        dateOptions.footer,
-      )}
-    </>
-  );
-});
-
-export default component$(({ mode }) => {
+export default component$<ServerTimeProps>(({ serverTime }) => {
   return (
     <footer class="m-5">
       <div class={[styles.anchor, "container"]}>
@@ -26,10 +14,9 @@ export default component$(({ mode }) => {
         </Link>
         <span class={styles.spacer}>|</span>
         <span>
-          {mode === "test" ? (
-            new Date().toLocaleDateString(undefined, dateOptions.footer)
-          ) : (
-            <ServerTimeComponent />
+          {(serverTime ? new Date(serverTime) : new Date()).toLocaleDateString(
+            undefined,
+            dateOptions.footer,
           )}
         </span>
       </div>

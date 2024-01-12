@@ -2,10 +2,9 @@ import { component$, useVisibleTask$, useStore } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { About, Projects } from "~/components/feature";
 import styles from "./projects/project.module.css";
-import { useServerTimeLoader, dateOptions } from "../functions";
 
-// Re0Export Loader Modules
-export { useServerTimeLoader, dateOptions };
+// Re-Export Loader Modules
+export { dateOptions } from "../functions/routeLoaders";
 
 export default component$(() => {
   const scrn = useStore({ width: 0 });

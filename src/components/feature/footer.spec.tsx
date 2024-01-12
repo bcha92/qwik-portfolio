@@ -5,7 +5,7 @@ import { QwikCityMockProvider } from "@builder.io/qwik-city";
 
 describe('Footer component:', async () => {
     const { screen, render } = await createDOM();
-    await render(<QwikCityMockProvider><Footer mode={"test"} /></QwikCityMockProvider>)
+    await render(<QwikCityMockProvider><Footer /></QwikCityMockProvider>)
 
     const linksParent = screen.querySelector(".container");
 
