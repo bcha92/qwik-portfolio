@@ -1,4 +1,5 @@
 import { createDOM } from "@builder.io/qwik/testing";
+import { QwikCityMockProvider } from "@builder.io/qwik-city";
 import { describe, test, expect } from "vitest";
 import Button from "./external-button";
 import type { ButtonProps } from "../SchemaList";
@@ -12,7 +13,9 @@ const mockConfig: ButtonProps = {
 
 describe('External Button Component without SVG:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Button href={mockConfig.href} />);
+    await render(<QwikCityMockProvider>
+        <Button href={mockConfig.href} />
+    </QwikCityMockProvider>);
 
     test('rendered with #example href tag', () => {
         expect(screen.innerHTML).toContain("#example");
@@ -26,7 +29,9 @@ describe('External Button Component without SVG:', async () => {
 
 describe('External Button Component with SVG:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Button href={mockConfig.href} svg={mockConfig.svg} />);
+    await render(<QwikCityMockProvider>
+        <Button href={mockConfig.href} svg={mockConfig.svg} />
+    </QwikCityMockProvider>);
     const svg = screen.querySelector("svg");
     const path = screen.querySelector("path");
     

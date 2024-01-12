@@ -1,16 +1,17 @@
 import { createDOM } from "@builder.io/qwik/testing";
+import { QwikCityMockProvider } from "@builder.io/qwik-city";
 import { describe, test, expect } from "vitest";
 import About from "../about/about";
 
 test('About Page Component should not be visible if marked hidden', async () => {
     const { screen, render } = await createDOM();
-    await render(<About isHidden={true} />);
+    await render(<QwikCityMockProvider><About isHidden={true} /></QwikCityMockProvider>);
     expect(screen.querySelector(".about")?.className).toContain("hidden");
 })
 
 describe('About Page Component:', async () => {
     const { screen, render } = await createDOM();
-    await render(<About />);
+    await render(<QwikCityMockProvider><About /></QwikCityMockProvider>);
     const aboutPage = screen.querySelector(".about");
     
     test('should contain <h2> Header element', () => {

@@ -1,4 +1,5 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import type { ExternalInfoProps } from "../SchemaList";
 import styles from "./card.module.css";
 
@@ -28,7 +29,7 @@ export default component$(
           "align-center decoration-none flex justify-center overflow-hidden",
         ]}
       >
-        <a
+        <Link
           href={link}
           target="_blank"
           rel="noopener noreferrer"
@@ -59,7 +60,7 @@ export default component$(
             </span>
           )}
           {!isExpanded.value && <span class={styles.full}>{name}</span>}
-        </a>
+        </Link>
         <div
           class={[styles.details, "justify-center"]}
           style={{
