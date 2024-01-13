@@ -3,6 +3,9 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { About, Projects } from "~/components/feature";
 import styles from "./projects/project.module.css";
 
+// Re-Export Loader Modules
+export { dateOptions } from "../functions/routeLoaders";
+
 export default component$(() => {
   const scrn = useStore({ width: 0 });
   // eslint-disable-next-line qwik/no-use-visible-task

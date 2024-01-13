@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import SVG from "../SVG";
 import type { ButtonProps } from "../SchemaList";
 import styles from "./button.module.css";
@@ -6,7 +7,7 @@ import styles from "./button.module.css";
 export default component$<ButtonProps>(
   ({ href, svg, text, color, background, borderColor }) => {
     return (
-      <a
+      <Link
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -28,7 +29,7 @@ export default component$<ButtonProps>(
           />
         )}
         <span class="m-1">{text || ""}</span>
-      </a>
+      </Link>
     );
   },
 );

@@ -1,4 +1,5 @@
 import { createDOM } from "@builder.io/qwik/testing";
+import { QwikCityMockProvider } from "@builder.io/qwik-city";
 import { describe, test, expect } from "vitest";
 import Carousel from "./carousel";
 import type { ExternalInfoProps } from "../SchemaList";
@@ -14,9 +15,25 @@ const projectMock: ExternalInfoProps[] = [
     }
 ];
 
+test('Carousel Component with no project should render 404 page:', async () => {
+    const { screen, render } = await createDOM();
+    await render(<QwikCityMockProvider><Carousel /></QwikCityMockProvider>);
+    const fourOhFour = screen.querySelector(".four-oh-four");
+    expect(fourOhFour?.firstChild?.nodeName).toContain("H2")
+})
+
+test('Carousel Component with empty project array should render 404 page:', async () => {
+    const { screen, render } = await createDOM();
+    await render(<QwikCityMockProvider><Carousel projects={[]} /></QwikCityMockProvider>);
+    const fourOhFour = screen.querySelector(".four-oh-four");
+    expect(fourOhFour?.firstChild?.nodeName).toContain("H2")
+})
+
 describe('Carousel Component with one project:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Carousel projects={projectMock.slice(0, 1)} />);
+    await render(<QwikCityMockProvider>
+        <Carousel projects={projectMock.slice(0, 1)} />
+    </QwikCityMockProvider>);
     
     test('renders correct name on project', async () => {
         expect(screen.innerHTML).toContain(projectMock[0].name);
@@ -33,7 +50,9 @@ describe('Carousel Component with one project:', async () => {
 
 describe('Carousel Component with at least two projects:', async () => {
     const { screen, render, userEvent } = await createDOM();
-    await render(<Carousel projects={projectMock} />);
+    await render(<QwikCityMockProvider>
+        <Carousel projects={projectMock} />
+    </QwikCityMockProvider>);
     const prev = screen.querySelector(".previous");
     const next = screen.querySelector(".next");
     

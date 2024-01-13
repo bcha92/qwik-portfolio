@@ -1,4 +1,5 @@
 import { createDOM } from "@builder.io/qwik/testing";
+import { QwikCityMockProvider } from "@builder.io/qwik-city";
 import { describe, test, expect } from "vitest";
 import Card from "./card";
 import { defaultProjects } from "~/media/DefaultProps";
@@ -7,7 +8,9 @@ const { name, link, description, color, background } = defaultProjects[0];
 
 describe('Card Component without image:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Card name={name} link={link} description={description} color={color} />);
+    await render(<QwikCityMockProvider>
+        <Card name={name} link={link} description={description} color={color} />
+    </QwikCityMockProvider>);
 
     test('renders <span> tag with text', () => {
         expect(screen.innerHTML).toContain("span");
@@ -23,7 +26,9 @@ describe('Card Component without image:', async () => {
 
 describe('Card Component with image:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Card name={name} link={link} description={description} color={color} background={background} />);
+    await render(<QwikCityMockProvider>
+        <Card name={name} link={link} description={description} color={color} background={background} />
+    </QwikCityMockProvider>);
 
     test('renders <picture> with <source> and <img> elements', () => {
         expect(screen.innerHTML).toContain("picture");

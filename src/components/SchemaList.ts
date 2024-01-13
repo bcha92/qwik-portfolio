@@ -69,3 +69,11 @@ export type ConfettiOverride = {
   particleCount: number;
   scalar: number;
 };
+
+export type DateOptionsSchema = {
+  footer: Intl.DateTimeFormatOptions;
+};
+
+export interface ServerTimeProps {
+  serverTime?: string;
+}

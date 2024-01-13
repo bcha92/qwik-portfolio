@@ -1,9 +1,12 @@
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
-import type { RequestHandler } from "@builder.io/qwik-city";
+import { type RequestHandler } from "@builder.io/qwik-city";
 
 import { Header, Footer } from "~/components/feature";
 import styles from "./styles.css?inline";
+
+// Re-Exporting required for production build
+import { useServerTimeLoader } from "~/functions/routeLoaders";
+export { useServerTimeLoader };
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -16,14 +19,8 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
   });
 };
 
-// Footer use only // routeLoader$ can only be used in layout.tsx
-export const useServerTimeLoader = routeLoader$(() => {
-  return {
-    date: new Date().toISOString(),
-  };
-});
-
 export default component$(() => {
+  const serverTime = useServerTimeLoader();
   useStyles$(styles);
 
   return (
@@ -32,7 +29,7 @@ export default component$(() => {
       <main>
         <Slot />
       </main>
-      <Footer />
+      <Footer serverTime={serverTime.value.date} />
     </>
   );
 });
