@@ -3,11 +3,11 @@ import { describe, test, expect } from "vitest";
 import Card from "./card";
 import parsedProjects from "~/assets/ExternalInfo";
 
-const { name, link, description, color, background } = parsedProjects()[0];
+const { name, link, description, background } = parsedProjects()[0];
 
 describe('Card Component without image:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Card name={name} link={link} description={description} color={color} />);
+    await render(<Card name={name} link={link} description={description} />);
 
     test('renders <span> tag with text', () => {
         expect(screen.innerHTML).toContain("span");
@@ -21,7 +21,7 @@ describe('Card Component without image:', async () => {
 
 describe('Card Component with image:', async () => {
     const { screen, render } = await createDOM();
-    await render(<Card name={name} link={link} description={description} color={color} background={background} />);
+    await render(<Card name={name} link={link} description={description} background={background} />);
 
     test('renders <img> with background and <span> with text', () => {
         expect(screen.innerHTML).toContain("img");
