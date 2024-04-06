@@ -2,6 +2,7 @@ import type { ExternalInfoProps } from "~/components/SchemaList";
 import QwikPortfolioImage from "../media/qwiksite-1.webp";
 import LettyImage from "./projects/0.webp";
 import DigitalDenImage from "./projects/1.webp";
+import QwikIntroImage from "./projects/2.webp";
 
 export const defaultExternalLinks: ExternalInfoProps[] = [
   {
@@ -47,6 +48,13 @@ export const defaultExternalLinks: ExternalInfoProps[] = [
 ];
 
 export const defaultProjects: ExternalInfoProps[] = [
+  {
+    id: "tjs/qwik-intro-presentation",
+    name: "Introduction to QwikJS: Web Framework Built for the Edge",
+    description: "Google Slides Presentation on QwikJS",
+    link: "/projects/intro-qwik",
+    background: QwikIntroImage,
+  },
   {
     id: "bcha92/qwik-portfolio",
     name: "Qwik-Portfolio",
