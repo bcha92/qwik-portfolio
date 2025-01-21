@@ -46,7 +46,7 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
-    "undici": "^6.11.1",
+    "undici": "^6.21.1",
     "vercel": "^33.4.1",
     "vite": "^5.4.6",
     "vite-tsconfig-paths": "^4.3.1",
